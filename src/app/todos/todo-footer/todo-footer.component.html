@@ -1,0 +1,23 @@
+<footer class="footer">
+
+    <span class="todo-count">
+            <strong class="mr-2"> 
+                {{pendientes}}
+            </strong>
+            <small>Tareas pendientes</small>
+    </span>
+
+    <ul class="filters">
+        <li *ngFor="let filtro of filtros"
+            (click)="cambiarFiltro( filtro )">
+            <a [class.selected]="filtro === filtroActual" 
+               href="#/">
+                {{filtro | titlecase}}
+            </a>
+        </li>
+    </ul>
+
+    <button class="clear-completed"
+            (click)="borrarCompletados()"
+    ><small>Borrar completados</small></button>
+</footer>
